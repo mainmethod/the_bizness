@@ -1,11 +1,11 @@
 <div><%= @user.full_name %></div>
-<% if(!current_user.following?(@user) && current_user != @user) %>
+<% if(!current_user.following?(@user)) %>
 <div><%= link_to "Follow", follow_user_path(@user) %></div>
 <% end %>
 <hr />
 <% if(@user.followed_users.count) %>
 	<h3>Following</h3>
 	<% @user.followed_users.each do |f| %>
-		<div><%= f.full_name %><% if(current_user == @user) %> <%= link_to "Unfollow", unfollow_user_path(f) %> <% end %></div>
+		<div><%= f.full_name %></div>
 	<% end %>
 <% end %>

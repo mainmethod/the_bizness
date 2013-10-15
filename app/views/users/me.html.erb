@@ -1,0 +1,20 @@
+<div><%= @user.full_name %></div>
+<hr />
+<% if(@user.followed_users.count) %>
+	<h3>Following</h3>
+	<% @user.followed_users.each do |f| %>
+		<div><%= f.full_name %> <%= link_to "Unfollow", unfollow_user_path(f) %></div>
+	<% end %>
+<% end %>
+<hr />
+<%= image_tag @user.image_path.url(:profile) %>
+<%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
+    <div>
+        <div><%= f.text_field :first_name, :placeholder => "First Name", :autocomplete => "off" %></div>
+        <div><%= f.text_field :last_name, :placeholder => "Last Name", :autocomplete => "off" %></div>
+        <div><%= f.text_area :about, :placeholder => "About Me" %></div>
+        <div><%= f.label :image_path, 'Update Profile Image'%></div>
+        <div><%= f.file_field :image_path %></div>
+    </div>
+    <%= f.submit "Update profile", :class => "submit" %>
+<% end %>

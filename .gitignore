@@ -20,3 +20,4 @@
 # rails
 /config/database.yml
 Gemfile.lock
+/public/system*

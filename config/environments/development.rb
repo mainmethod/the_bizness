@@ -37,4 +37,12 @@ TheBizness::Application.configure do
   
   # devise mailer
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
+  #paperclip options
+  config.paperclip_defaults = {
+    :storage => :filesystem,
+    :url => "/system/:class/:attachment/:id/:filename_:style.:extension",
+    :path => ':rails_root/public:url',
+    :default_url => "http://nicenicejpg.com/200"
+  }
 end
