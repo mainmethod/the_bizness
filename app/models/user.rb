@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :followed_users, :through => :relationships, :source => :followed
   has_many :reverse_relationships, :foreign_key => :followed_id, :class_name => 'Relationship', :dependent => :destroy
   has_many :followers, :through => :reverse_relationships, :source => :follower
+  has_many :posts
   
   has_attached_file :image_path, :styles => {
     :thumb => '100x100>',
