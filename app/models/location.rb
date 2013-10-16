@@ -16,10 +16,9 @@ class Location < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude do |obj,results|
     result = nil
     results.each do |r|
-      r.data['address_components'].each do |c|
-        if(c['types'].include?('locality') && (c['short_name']==obj.city || c['long_name']==obj.city))
-          result = r
-        end
+      if(r.city == obj.city)
+        result = r
+        break
       end
     end
     if geo = result || results.first
