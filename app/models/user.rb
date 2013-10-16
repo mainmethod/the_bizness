@@ -5,12 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
-                  :first_name, :last_name, :image_path, :birthday, :about
+                  :first_name, :last_name, :image_path, :birthday, :about, :location_id
   
   has_many :relationships, :foreign_key => :follower_id, :class_name => 'Relationship', :dependent => :destroy
   has_many :followed_users, :through => :relationships, :source => :followed
   has_many :reverse_relationships, :foreign_key => :followed_id, :class_name => 'Relationship', :dependent => :destroy
   has_many :followers, :through => :reverse_relationships, :source => :follower
+  belongs_to :location
   has_many :posts
   
   has_attached_file :image_path, :styles => {

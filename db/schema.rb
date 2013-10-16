@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015031508) do
+ActiveRecord::Schema.define(:version => 20131016011750) do
+
+  create_table "locations", :force => true do |t|
+    t.string   "country"
+    t.string   "state"
+    t.string   "city"
+    t.integer  "zipcode"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
@@ -55,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20131015031508) do
     t.string   "image_path_content_type"
     t.integer  "image_path_file_size"
     t.datetime "image_path_updated_at"
+    t.integer  "location_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
