@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.recent().except_me(current_user).all
+    @posts = Post.recent().all
   end
   
 end

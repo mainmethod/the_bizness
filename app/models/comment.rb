@@ -1,11 +1,11 @@
-class Comment < Post
+class Comment < ActiveRecord::Base
   
-  table_name = 'posts'
+  self.table_name = 'posts'
   
-  belongs_to :post
+  belongs_to :post, :foreign_key => :parent_id
+  belongs_to :user
   
-  self.default_scopes = []
   default_scope where('posts.parent_id<>0')
-  scope :recent, oder('posts.created_at DESC')
+  scope :recent, includes(:user).order('posts.created_at DESC')
   
 end

@@ -3,11 +3,10 @@ class Post < ActiveRecord::Base
   
   belongs_to :user
   has_many :comments, :foreign_key => :parent_id
-  belongs_to :post, :foreign_key => :parent_id
   
   default_scope where("posts.parent_id=0")
   scope :recent, includes(:user).order('posts.created_at DESC')
   scope :except_me, lambda{|current_user|
-    where("user_id <> ?",current_user.id)
+    where("posts.user_id <> ?",current_user.id)
   }
 end

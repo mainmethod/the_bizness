@@ -1,6 +1,14 @@
 <h1>Posts</h1>
 <% @posts.each do |post| %>
+	<b><i><%= post.user.full_name %></i></b>
 	<p><%= post.content %></p>
-	<div><i><%= post.user.full_name %></i></div>
+	<ul>
+	<% post.comments.each do |comment| %>
+		<li>
+			<i><%= comment.user.full_name %></i>
+			<p><%= comment.content %></p>
+		</li>
+	<% end %>
+	</ul>
 	<hr />
 <% end %>
