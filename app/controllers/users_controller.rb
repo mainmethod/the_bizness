@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   
   def me
     @user = current_user
-    @user.location = @user.location || Location.new
+    @user.location = @user.location || @user.build_location
   end
   
   def update

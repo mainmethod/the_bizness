@@ -40,4 +40,8 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+  
+  def location_attributes=(attributes)
+    self.location = Location.find_or_create_by_city_and_state(attributes[:city],attributes[:state])
+  end
 end
