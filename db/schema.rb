@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131016011750) do
+ActiveRecord::Schema.define(:version => 20131016184408) do
 
   create_table "locations", :force => true do |t|
     t.string   "country"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20131016011750) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "locations", ["latitude", "longitude"], :name => "index_locations_on_latitude_and_longitude"
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"

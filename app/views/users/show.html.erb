@@ -1,3 +1,4 @@
+<div><%= image_tag @user.image_path.url(:profile) %></div>
 <div><%= @user.full_name %></div>
 <% if(!current_user.following?(@user)) %>
 <div><%= link_to "Follow", follow_user_path(@user) %></div>

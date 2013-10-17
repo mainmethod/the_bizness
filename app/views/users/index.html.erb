@@ -1,5 +1,6 @@
 <% @users.each do |u| %>
 	<div>
+	    <div><%= image_tag u.image_path.url(:profile) %></div>
 		<div><%= u.full_name %></div>
 		<div><%= link_to "View", u %></div>
 	</div>

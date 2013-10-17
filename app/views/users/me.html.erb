@@ -10,6 +10,10 @@
 <%= image_tag @user.image_path.url(:profile) %>
 <%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
     <div>
+        <%= f.fields_for :location do |l| %>
+            <div><%= l.text_field :city, :placeholder => 'City' %></div>
+            <div><%= l.text_field :state, :placeholder => 'State' %></div>
+        <% end %>
         <div><%= f.text_field :first_name, :placeholder => "First Name", :autocomplete => "off" %></div>
         <div><%= f.text_field :last_name, :placeholder => "Last Name", :autocomplete => "off" %></div>
         <div><%= f.text_area :about, :placeholder => "About Me" %></div>
