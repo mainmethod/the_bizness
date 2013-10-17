@@ -8,4 +8,8 @@ class PostsController < ApplicationController
     redirect_to profile_path
   end
   
+  def index
+    @posts = Post.recent().except_me(current_user).all
+  end
+  
 end
