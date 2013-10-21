@@ -1,0 +1,17 @@
+<div class="left-controls">
+    
+    <div class="user-info">
+        <%= image_tag @user.image_path.url(:profile) %> 
+        <%= current_user.first_name %>
+    </div>
+    
+    <ul class="user-nav">
+        
+        <li><a href="<%= profile_path %>"><span class="icon icon-pencil"></span> Edit Profile</li>
+        <li><a data-method="delete" href="<%= destroy_user_session_path %>"><span class="icon icon-close"></span> Sign Out</a></li>
+        
+    </ul>
+
+</div>
+
+<a href="<%= users_path %>"><span class="icon icon-users"></span> Users</a>

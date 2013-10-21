@@ -1,0 +1,104 @@
+span.required {
+    display: none;
+}
+#error_explanation {
+    color: #fff;
+    background: $red;
+    padding: 10px 40px;
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    
+    h2 {
+        background: transparent;
+        padding: 0;
+        font-size: 14px;
+        margin: 0 0 10px 0;
+    }
+}
+.login-form {
+    @include box;
+    width: 420px;
+    margin: 60px auto 0 auto;
+    padding: 0;
+    position: relative;
+    
+    h2 {
+        background: #404040;
+        padding: 20px 40px;
+        color: #fff;
+        border-radius: 2px 2px 0 0;
+    }
+    
+    .inner-form-wrap {
+        padding: 20px 40px 80px 40px;
+        
+        .input {
+            margin: 0 0 20px 0;
+            
+            label {
+                display: block;
+                font-size: 14px;
+            }
+        }
+        
+        .remember-me {
+            font-size: 12px;
+            padding: 10px;
+            background: $grey;
+            width: 100px;
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            border-radius: 2px;
+        }
+        
+        .btn {
+            position: absolute;
+            right: 40px;
+            bottom: 20px;
+        }
+        
+        input[type="email"],
+        input[type="password"] {
+          @include text_input();
+          width: 318px;
+        }
+    }
+    
+    
+}
+
+.devise-links {
+    width: 400px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+.user-form {
+  
+    .input {
+        position: relative;
+        height: 80px;
+        font-size: 14px;
+        
+        label {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            color: #999;
+            font-size: 16px;
+        }
+        input {
+            @include text_input();
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+        }
+    }
+    
+    .textarea {
+        
+    }
+    
+}
