@@ -1,17 +1,16 @@
 <div class="left-controls">
     
-    <div class="user-info">
-        <%= image_tag @user.image_path.url(:profile) %> 
-        <%= current_user.first_name %>
-    </div>
+    <a href="<%= profile_path %>" class="user-info">
+        <%= image_tag current_user.image_path.url(:profile) %> 
+        <b><%= current_user.first_name %> <%= current_user.last_name %></b>
+    </a>
     
-    <ul class="user-nav">
-        
-        <li><a href="<%= profile_path %>"><span class="icon icon-pencil"></span> Edit Profile</li>
-        <li><a data-method="delete" href="<%= destroy_user_session_path %>"><span class="icon icon-close"></span> Sign Out</a></li>
-        
+    <ul class="nav">
+        <li class="active"><a href=""><span class="icon icon-file"></span> Feed Me</a></li>
+        <li><a href=""><span class="icon icon-search"></span> Find</a></li>
+        <li><a href="<%= users_path %>"><span class="icon icon-users"></span> Users</a></li>
     </ul>
+    
+    <a class="logout" data-method="delete" href="<%= destroy_user_session_path %>"><span class="icon icon-close"></span> Log Out</a>
 
 </div>
-
-<a href="<%= users_path %>"><span class="icon icon-users"></span> Users</a>

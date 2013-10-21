@@ -78,22 +78,12 @@ span.required {
   
     .input {
         position: relative;
-        height: 80px;
         font-size: 14px;
+        margin: 10px 0;
         
-        label {
-            position: absolute;
-            top: 4px;
-            left: 0;
-            color: #999;
-            font-size: 16px;
-        }
         input {
             @include text_input();
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 500px;
+            width: 100%;
         }
     }
     
