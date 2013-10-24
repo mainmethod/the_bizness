@@ -3,10 +3,54 @@
 <head>
   <title>TheBizness</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag :defaults %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
+  <script type="text/javascript">
+      var ge;
+      google.load("earth", "1", {"other_params":"sensor=true_or_false"});
+
+      function init() {
+        google.earth.createInstance('map3d', initCB, failureCB);
+      }
+
+      function initCB(instance) {
+        ge = instance;
+        ge.getWindow().setVisibility(true);
+      
+        var placemark = ge.createPlacemark('');
+      	var point = ge.createPoint('');
+      	placemark.setName("Where I be");
+      	point.setLatitude(<%= current_user.location.latitude %>);
+      	point.setLongitude(<%= current_user.location.longitude %>);
+      	placemark.setGeometry(point);
+      	ge.getFeatures().appendChild(placemark);
+      
+      	// Define a custom icon.
+	 	var icon = ge.createIcon('');
+	 	icon.setHref('http://maps.google.com/mapfiles/kml/paddle/red-circle.png');
+	 	var style = ge.createStyle('');
+	 	style.getIconStyle().setIcon(icon);
+	 	style.getIconStyle().setScale(2);
+	 	placemark.setStyleSelector(style);
+      
+      	var lookAt = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
+
+	  	// Zoom out to twice the current range.
+	  	lookAt.set(<%= current_user.location.latitude %>,<%= current_user.location.longitude %>, 0, 
+               ge.ALTITUDE_RELATIVE_TO_GROUND, 0, 0, 2500);
+	
+	  // Update the view in Google Earth.
+	  	ge.getView().setAbstractView(lookAt);
+    	}
+
+    	function failureCB(errorCode) {
+    	}
+
+    	google.setOnLoadCallback(init);
+  </script>
 </head>
 <body>
     <%= render :partial => "layouts/messages" %>

@@ -8,6 +8,7 @@
 <% end %>
 
 <%= image_tag @user.image_path.url(:profile) %>
+<div id="map3d" style="height:400px; width=600px;"></div>
 <%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
     <div class="user-form">
         <%= f.fields_for :location do |l| %>
