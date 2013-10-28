@@ -1,14 +1,37 @@
-<h1>Posts</h1>
 <% @posts.each do |post| %>
-	<b><i><%= post.user.full_name %></i></b>
-	<p><%= post.content %></p>
-	<ul>
-	<% post.comments.each do |comment| %>
-		<li>
-			<i><%= comment.user.full_name %></i>
-			<p><%= comment.content %></p>
-		</li>
-	<% end %>
-	</ul>
-	<hr />
+
+<div class="post">
+
+	<div class="content">
+	    <img src="http://www.placekitten.com/40/40" />
+	    <div class="header">
+        	<div class="name"><%= post.user.full_name %></div>
+        	<div class="title">Actor</div>
+        </div>
+        
+        <p>Rob, please make this image the users image and put the users title in the place of "Actor". Thanks, and please go fuck yourself. Also, we need a comment form.</p>
+    	<p><%= post.content %></p>
+    	
+	</div>
+	
+	
+	<div class="comments">
+
+    	<% post.comments.each do |comment| %>
+    		<div class="comment">
+    		    
+    		    <img src="http://www.placekitten.com/40/40" />
+    		    
+    		    <div class="header">
+                    <div class="name"><%= comment.user.full_name %></div>
+                </div>
+                
+    			<p><%= comment.content %></p>
+    			
+    		</div>
+    	<% end %>
+
+	</div>
+</div>
+
 <% end %>
