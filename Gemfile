@@ -9,6 +9,8 @@ gem 'mysql2'
 gem 'devise'
 gem 'paperclip'
 gem 'geocoder'
+gem 'rolify'
+gem 'cancan'
 
 group :development do
   gem 'better_errors'
