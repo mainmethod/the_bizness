@@ -1,0 +1,1 @@
+$(".comments[data-post='<%= @post.id %>']").append('<%= escape_javascript(render partial: 'comments/form', locals: {comment: @comment, post: @post}) %>');

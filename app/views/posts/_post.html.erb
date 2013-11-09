@@ -11,9 +11,14 @@
         
     </div>
     
-    <div class="comments">
+    <div class="comments" data-post="<%= post.id %>">
         
         <%= render :partial => 'comments/comment', :collection => post.comments %>
 
     </div>
+    
+</div>
+
+<div class="comment-form">
+    <%= link_to "Add Comment", new_post_comment_path(post), :remote => true %>
 </div>
