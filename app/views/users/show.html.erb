@@ -1,9 +1,50 @@
-<div><%= image_tag @user.image_path.url(:profile) %></div>
-<div><%= @user.full_name %></div>
-<% if(!current_user.following?(@user)) %>
+<div class="profile">
+    
+     <div class="profile-header">
+        
+        <%= image_tag @user.image_path.url(:profile) %>
+        <h1><%= @user.full_name %></h1>
+        <div class="title"><%= @user.title %></div>
+        
+    </div>
+    
+    <div class="user-info">
+            
+        <a class="pill following">
+            <span>20</span> following
+        </a>
+        
+        <a class="pill followers">
+            <span>14</span> followers
+        </a>
+        
+        <a class="pill location">
+            <span class="icon icon-location"></span> <%= @user.location.city %>, <%= @user.location.state %>
+        </a>
+
+        <% if(!current_user.following?(@user)) %>
+            <a class="pill follow-status">
+                <span class="icon icon-checkmark"></span> Following
+            </a>
+        <% else %>   
+            <a class="pill follow-status active">
+                <span class="icon icon-checkmark"></span> Following
+            </a>
+        <% end %>   
+        <div class="clb"></div>
+        
+    </div>
+    
+</div>
+
+
+
 <div><%= link_to "Follow", follow_user_path(@user) %></div>
+
 <% end %>
+
 <hr />
+
 <% if(@user.followed_users.count) %>
 	<h3>Following</h3>
 	<% @user.followed_users.each do |f| %>

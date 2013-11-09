@@ -1,9 +1,9 @@
 .profile {
 
-    .header {
+    .profile-header {
         position: relative;
         @include box;
-        height: 240px;
+        height: 200px;
         padding-left: 260px;
         margin-bottom: 4px;
         border-bottom: 0;
@@ -36,19 +36,19 @@
         
         .pill {
             padding: 14px;
-            font-size: 12px;
+            font-size: 13px;
             color: $darkblue;
             float: left;
             border-radius: 2px;
             margin-right: 20px;
+            text-transform: capitalize;
             
             span {
               color: $darkbackground;
-              font-size: 12px;
               font-weight: bold;
               
               &.icon {
-                  font-size: 14px;
+                  
               }
             }
             
@@ -57,11 +57,20 @@
                 color: $darkgrey;
                 float: right;
                 background: $lightgrey;
-                padding: 8px;
+                padding: 8px 12px 8px 8px;
                 margin: 4px 10px 0 0;
                 
                 span {
                     color: $darkgrey;
+                }
+                
+                &.active {
+                    background: $darkgreen;
+                    color: #fff;
+                    
+                    span {
+                        color: #fff;
+                    }
                 }
             }
         }
