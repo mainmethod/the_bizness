@@ -1,0 +1,11 @@
+<div class="comment">
+                
+    <%= image_tag comment.user.image_path.url(:thumb) %>
+    
+    <div class="header">
+        <div class="name"><%= comment.user.full_name %></div>
+    </div>
+    
+    <p><%= comment.content %></p>
+    
+</div>

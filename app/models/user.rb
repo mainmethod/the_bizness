@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
-                  :first_name, :last_name, :image_path, :birthday, :about, :location_attributes, :location_id
+                  :first_name, :last_name, :image_path, :birthday, :about, :location_attributes, :location_id,
+                  :title
   
   has_many :relationships, :foreign_key => :follower_id, :class_name => 'Relationship', :dependent => :destroy
   has_many :followed_users, :through => :relationships, :source => :followed
@@ -17,8 +18,8 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :location
   
   has_attached_file :image_path, :styles => {
-    :thumb => '100x100>',
-    :profile => '200x200>'
+    :thumb => '100x100#',
+    :profile => '200x200#'
   }
   
   scope :except_me, lambda{|current_user|
