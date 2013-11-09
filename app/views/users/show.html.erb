@@ -22,12 +22,12 @@
             <span class="icon icon-location"></span> <%= @user.location.city %>, <%= @user.location.state %>
         </a>
 
-        <% if(!current_user.following?(@user)) %>
-            <a class="pill follow-status">
-                <span class="icon icon-checkmark"></span> Following
+        <% if !current_user.following?(@user) %>
+            <a href="<%= follow_user_path(@user) %>" class="pill follow-status">
+                <span class="icon icon-checkmark"></span> Follow
             </a>
         <% else %>   
-            <a class="pill follow-status active">
+            <a href="<%= unfollow_user_path(@user) %>" class="pill follow-status active">
                 <span class="icon icon-checkmark"></span> Following
             </a>
         <% end %>   
@@ -37,13 +37,6 @@
     
 </div>
 
-
-
-<div><%= link_to "Follow", follow_user_path(@user) %></div>
-
-<% end %>
-
-<hr />
 
 <% if(@user.followed_users.count) %>
 	<h3>Following</h3>

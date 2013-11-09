@@ -1,4 +1,10 @@
-<%= form_for [post, Comment.new] do |f| %>
-    <div><%= f.text_area :content, :placeholder => 'Say Something...', :class => "expanding" %></div>
-    <%= f.submit "Comment" %>
-<% end %>
+<div class="comment-form">
+    <%= form_for [post, Comment.new] do |f| %>
+        <%= image_tag current_user.image_path.url(:profile) %>
+        <%= f.text_area :content, :placeholder => 'Say Something...', :class => "expanding" %>
+        
+        <div class="submit-wrap">
+            <%= f.submit "Comment", :class => "btn" %>
+        </div>
+    <% end %>
+</div>

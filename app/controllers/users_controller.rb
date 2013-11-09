@@ -28,12 +28,12 @@ class UsersController < ApplicationController
   def follow
     followed_user = User.find(params[:id])
     current_user.follow!(followed_user)
-    redirect_to profile_path
+    redirect_to user_url(followed_user)
   end
   
   def unfollow
     followed_user = User.find(params[:id])
     current_user.unfollow!(followed_user)
-    redirect_to profile_path
+    redirect_to user_url(followed_user)
   end
 end

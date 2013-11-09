@@ -17,8 +17,7 @@
 
     </div>
     
+    <%= render :partial => 'comments/form', :locals => {:post => post} %>
+
 </div>
 
-<div class="comment-form">
-    <%= render :partial => 'comments/form', :locals => {:post => post} %>
-</div>

@@ -15,6 +15,17 @@ span.required {
         margin: 0 0 10px 0;
     }
 }
+
+textarea {
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+textarea, .textareaClone {
+    min-height: 70px;
+}
+
 .login-form {
     @include box;
     width: 420px;
@@ -100,5 +111,45 @@ span.required {
     textarea {
         width: 100%;
         background: #fff;
+        padding: 10px;
+    }
+}
+
+.comment-form {
+    position: relative;
+    border-top: 1px solid $grey;
+    
+    img {
+        border-radius: 3px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 30px;
+        height: 30px;
+        z-index: 2;
+    }
+    
+    textarea {
+        position: relative;
+        width: 100%;
+        padding: 10px;  
+        padding: 28px 100px 28px 60px;
+        background: #fff;
+    }
+    
+    .submit-wrap {
+        height: 0;
+        position: relative;
+        
+        .btn {
+            position: absolute;
+            top: -48px;
+            right: 20px;
+            font-size: 12px;
+            background: $green;
+            border-color: $darkgreen;
+            color: #fff;
+            padding: 4px 10px;
+        }
     }
 }
