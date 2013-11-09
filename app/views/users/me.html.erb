@@ -61,7 +61,5 @@
     <hr />
     <hr />
     <h3>Posts</h3>
-    <% @user.posts.recent().each do |p| %>
-    	<div><%= p.content %></div>
-    <% end %>
+    <%= render :partial => 'posts/post', :collection => @user.posts %>
 </div>
