@@ -87,8 +87,18 @@ span.required {
         }
     }
     
-    .textarea {
-        
+    .textarea.expanding {
+        width: 100%;
     }
     
+}
+
+.new-post {
+    @include box;
+    padding: 0;
+    
+    textarea {
+        width: 100%;
+        background: #fff;
+    }
 }

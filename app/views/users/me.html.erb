@@ -4,7 +4,7 @@
         
         <%= image_tag @user.image_path.url(:profile) %>
         <h1><%= @user.full_name %></h1>
-        <div class="title"><%= @user.title %></div>
+        <div class="title">Title</div>
         
     </div>
     
@@ -47,18 +47,16 @@
             <% end %>
             <div class="input"><%= f.text_field :first_name, :placeholder => "First Name", :autocomplete => "off" %></div>
             <div class="input"><%= f.text_field :last_name, :placeholder => "Last Name", :autocomplete => "off" %></div>
-            <div class="input"><%= f.text_field :title, :placeholder => "Job Title", :autocomplete => "off" %></div>
             <!-- <div><%= f.text_area :about, :placeholder => "About Me" %></div> -->
             <div><%= f.label :image_path, 'Update Profile Image'%></div>
             <div><%= f.file_field :image_path %></div>
         </div>
         <%= f.submit "Update profile" %>
     <% end %>
-    <hr />
-    <h3>New Post</h3>
+
+
     <%= render :partial => 'posts/form' %>
-    <hr />
-    <hr />
+
     <h3>Posts</h3>
     <%= render :partial => 'posts/post', :collection => @user.posts %>
 </div>
