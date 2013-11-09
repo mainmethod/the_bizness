@@ -2,68 +2,167 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: #333;
     background: $background;
-    padding-top: 80px;
+    padding-top: 136px;
 }
-
-.search {
-    position: fixed;
-    width: 810px;
-    top: 0;
-    left: 200px;
-    height: 60px;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
+.fixed-hd {
+    border-bottom: 5px solid #f2f2f2;
     z-index: 100;
-    
-    input {
-        background: transparent;
-        width: 540px;
-        height: 40px;
-        padding: 10px 200px 10px 70px;
-        border: 0;
-        margin: 0;
-        font-size: 30px;
-        position: relative;
-        z-index: 2;
-    }
-    
-    .icon {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 38px;
-        height: 38px;
-        font-size: 40px;
-        padding: 10px;
-        border-right: 1px dotted #ccc;
-        color: #ddd;
-    }
-}
-
-.left-controls {
-    height: 100%;
     position: fixed;
+    width: 100%;
+    height: 112px;
     top: 0;
     left: 0;
-    width: 200px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    
+    .top-nav {
+        background: $darkbackground;
+        color: #999;
+        
+        ul {
+            height: 38px;
+            
+            li {
+                float: left;
+                
+                 a {
+                    display: block;
+                    padding: 11px 20px;
+                    height: 16px;
+                    font-size: 11px;
+                    color: #9da4ac;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    
+                    &.icon {
+                        font-size: 15px;
+                        padding: 11px 13px 11px 11px;
+                    }
+                    
+                 }
+                 
+                 &.active a {
+                    color: #fff;
+                    background: #363c45;
+                 }
+            }
+        }
+    }
+    
+    .bottom-nav {
+        width: 100%;
+        height: 80px;
+        background: #fff  ;
+        position: relative;
+        
+        .logo {
+            font-size: 28px;
+            width: 216px;
+            padding: 23px 10px 16px 0;
+            position: absolute;
+            height: 41px;
+            top: 0;
+            left: 0;
+            color: #d8d7d2;
+            font-weight: bold;
+            background: #edf6f9;
+            text-align: center;
+            border-radius: 2px;
+            
+            & b {
+                color: #009bff;
+            }
+        }
+        
+        input {
+            background: transparent;
+            width: 698px;
+            height: 40px;
+            padding: 10px 0 10px 65px;
+            border: 0;
+            margin: 0;
+            font-size: 30px;
+            position: absolute;
+            z-index: 2;
+            left: 236px;
+            top: 10px;
+            color: #333;
+        }
+        
+        .icon {
+            position: absolute;
+            left: 236px;
+            top: 10px;
+            width: 38px;
+            height: 38px;
+            font-size: 40px;
+            padding: 11px;
+            color: #eee;
+            
+            &.icon-pencil {
+                width: 32px;
+                height: 32px;
+                padding: 8px 10px;
+                font-size: 35px;
+                border-radius: 2px;
+                left: auto;
+                right: 4px;
+                top: 4px;
+                color: #fff;
+                cursor: pointer;
+                background: $green;
+                border-bottom: 5px solid $darkgreen;
+                border-right: 0;
+            }
+        }
+        
+        .user-info {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 80px;
+            width: 80px;
+            
+            img {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                height: 60px;
+                width: 60px;
+                border-radius: 2px;
+            }
+            
+            &:hover {
+                
+            }
+        }
+    }
+}
+
+
+.left-nav {
+    padding: 0;
+    position: fixed;
+    top: 136px;
+    left: 18px;
+    width: 190px;
     z-index: 100;
-    background: #202020;
+    
     
     ul.nav {
+        @include box();
         padding: 20px 0 0 0;
         
         li {
-            padding: 4px 10px;
             
             a {
                 font-size: 14px;
                 display: block;
-                padding: 10px 5px 10px 60px;
+                padding: 15px 5px 15px 60px;
                 color: #666;
                 cursor: pointer;
                 position: relative;
                 height: 20px;
-                border-radius: 2px;
                 
                 .icon {
                     color: #333;
@@ -89,7 +188,6 @@ body {
             a {
                 color: #202020;
                 background: #eee;
-                border-bottom: 2px solid #ccc;
                 
                 .icon {
                     color: $red;
@@ -102,48 +200,16 @@ body {
 
   
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ user info */
-.user-info {
-    display: block;
-    position: relative;
-    background: #181a1b;
-    height: 60px;
-    
-    img {
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        height: 44px;
-        width: 44px;
-        border-radius: 2px;
-    }
-    
-    b {
-        color: #999;
-        font-size: 12px;
-        top: 13px;
-        left: 70px;
-        position: absolute;
-        font-weight: normal;
-    }
-    
-    &:hover {
-        background: #000;
-    }
-}
 
 .content-body {
     width: 770px;
     position: relative;
     left: 0px;
-    margin-left: 240px;
+    margin-left: 226px;
 }
     
 .logout {
-    position: absolute;
-    bottom: 10px;
-    color: #fff;
-    font-size: 12px;
-    left: 10px;
+    
 }
 
 .flash {

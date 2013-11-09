@@ -1,16 +1,31 @@
-<div class="search">
-    <span class="icon icon-search"></span>
-    <input placeholder="Find..." type="text" />
-</div>
-<div class="left-controls">
+<div class="fixed-hd">
     
-    <a href="<%= profile_path %>" class="user-info">
-        <%= image_tag current_user.image_path.url(:profile) %> 
-        <b><%= current_user.first_name %><br /><%= current_user.last_name %></b>
-    </a>
+    <div class="top-nav">
+        <ul>
+            <li><a class="icon icon-house"></a></li>
+            <li class="active"><a>Community</a></li>
+            <li><a>Blog</a></li>
+        </ul>
+    </div>
+    
+    <div class="bottom-nav">
+        <div class="logo">The<b>Biz</b></div>
+        <span class="icon icon-search"></span>
+        <input placeholder="Find..." type="text" />
+        
+        <a href="<%= profile_path %>" class="user-info">
+            <%= image_tag current_user.image_path.url(:profile) %> 
+            <!-- use for dropdown -->
+            <!-- <b><%= current_user.first_name %> <%= current_user.last_name %></b> -->
+        </a>
+    </div>
+    
+</div>
+
+<div class="left-nav">
     
     <ul class="nav">
-        <li class="active"><a href="<%= posts_path %>"><span class="icon icon-list"></span> Feed Me</a></li>
+        <li class="active"><a href="<%= posts_path %>"><span class="icon icon-list"></span> News</a></li>
         <li><a href=""><span class="icon icon-comment"></span> Messages</a></li>
         <li><a href="<%= users_path %>"><span class="icon icon-users"></span> Users</a></li>
     </ul>
