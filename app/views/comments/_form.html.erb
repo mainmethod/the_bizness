@@ -1,4 +1,4 @@
-<%= form_for [post, comment] do |f| %>
+<%= form_for [post, Comment.new] do |f| %>
     <div><%= f.text_area :content, :placeholder => 'Say Something...', :class => "expanding" %></div>
-    <%= f.submit "Post" %>
+    <%= f.submit "Comment" %>
 <% end %>

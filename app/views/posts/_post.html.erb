@@ -20,5 +20,5 @@
 </div>
 
 <div class="comment-form">
-    <%= link_to "Add Comment", new_post_comment_path(post), :remote => true %>
+    <%= render :partial => 'comments/form', :locals => {:post => post} %>
 </div>
