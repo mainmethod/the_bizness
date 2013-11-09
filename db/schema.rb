@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131109172334) do
+ActiveRecord::Schema.define(:version => 20131107021215) do
 
   create_table "locations", :force => true do |t|
     t.string   "country"
@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(:version => 20131109172334) do
     t.integer  "image_path_file_size"
     t.datetime "image_path_updated_at"
     t.integer  "location_id"
-    t.string   "title"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
