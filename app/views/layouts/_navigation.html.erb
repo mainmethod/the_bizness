@@ -13,11 +13,22 @@
         <span class="icon icon-search"></span>
         <input placeholder="Find..." type="text" />
         
-        <a href="<%= profile_path %>" class="user-info">
-            <%= image_tag current_user.image_path.url(:profile) %> 
-            <!-- use for dropdown -->
-            <!-- <b><%= current_user.first_name %> <%= current_user.last_name %></b> -->
-        </a>
+        <div class="right-buttons">
+
+            <div class="user-info">
+            
+                <a href="<%= profile_path %>"><%= image_tag current_user.image_path.url(:profile) %></a>
+
+                <b><a href="<%= profile_path %>"><%= current_user.first_name %> <%= current_user.last_name %></a></b>
+                <a class="logout" data-method="delete" href="<%= destroy_user_session_path %>"><span class="icon icon-close"></span> Log Out</a>
+            </div>
+            
+            <a class="messages" href="">
+                <span class="count">23</span>
+                <span class="icon icon-comment"></span>
+            </a>
+        </div>
+        
     </div>
     
 </div>
@@ -26,10 +37,7 @@
     
     <ul class="nav">
         <li class="active"><a href="<%= posts_path %>"><span class="icon icon-list"></span> News</a></li>
-        <li><a href=""><span class="icon icon-comment"></span> Messages</a></li>
         <li><a href="<%= users_path %>"><span class="icon icon-users"></span> Users</a></li>
     </ul>
     
-    <a class="logout" data-method="delete" href="<%= destroy_user_session_path %>"><span class="icon icon-close"></span> Log Out</a>
-
 </div>

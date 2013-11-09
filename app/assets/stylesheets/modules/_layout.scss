@@ -69,7 +69,7 @@ body {
             border-radius: 2px;
             
             & b {
-                color: #009bff;
+                color: $blue;
             }
         }
         
@@ -88,7 +88,7 @@ body {
             color: #333;
         }
         
-        .icon {
+        .icon-search {
             position: absolute;
             left: 236px;
             top: 10px;
@@ -115,26 +115,70 @@ body {
             }
         }
         
-        .user-info {
-            display: block;
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 80px;
-            width: 80px;
+        .right-buttons {
+            position: relative;
+            z-index: 20; 
             
-            img {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                height: 60px;
-                width: 60px;
-                border-radius: 2px;
+            a.messages {
+                position: relative;
+                float: right;
+                padding-top: 10px;
+                
+                .icon {
+                    color: $blue;
+                    height: 60px;
+                    width: 60px;
+                    font-size: 60px; 
+                    
+                    &:hover {
+                        color: $darkblue;
+                    }
+                }
+                .count {
+                    color: #fff;
+                    font-size: 14px;
+                    position: absolute;
+                    top: 26px;
+                    left: 8px;
+                    text-align: center;
+                    width: 47px;
+                }
             }
-            
+          
+            .user-info {
+                position: relative;
+                float: right;
+                height: 70px;
+                width: 180px;
+                padding: 10px 0 0 80px;
+                margin-right: -180px;
+                @include single-transition(margin-right, 0.3s, ease);
+               
+                img {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 2px;
+                }
+                
+                &:hover {
+                    margin-right: 0;
+                    @include single-transition(margin-right, 0.3s, ease);
+                }
+            }
+
+            .logout {
+                position: absolute;
+                bottom: 10px;
+                left: 60px;
+                font-size: 12px;
+            }
+          
             &:hover {
                 
-            }
+            } 
         }
     }
 }

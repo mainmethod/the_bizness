@@ -26,6 +26,11 @@
     line-height: 1;
     color: #ccc;
     -webkit-font-smoothing: antialiased;
+    @include single-transition(color, 0.2s, ease);
+    
+    &:hover {
+        @include single-transition(color, 0.2s, ease);
+    }
 }
 .icon-paperclip:before {
   content: "\e600";
