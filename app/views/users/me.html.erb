@@ -11,11 +11,11 @@
     <div class="user-info">
             
         <a class="pill following">
-            <span>20</span> following
+            <span><%= @user.followed_users.count %></span> following
         </a>
         
         <a class="pill followers">
-            <span>14</span> followers
+            <span><%= @user.followers.count %></span> followers
         </a>
         
         <a class="pill location">
@@ -29,16 +29,7 @@
         <div class="clb"></div>
         
     </div>
-    
-    <% if(@user.followed_users.count) %>
-    	<h3>Following</h3>
-    	<% @user.followed_users.each do |f| %>
-    		<div><%= f.full_name %> <%= link_to "Unfollow", unfollow_user_path(f) %></div>
-    	<% end %>
-    <% end %>
-    
-    
-    
+        
     <%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
         <div class="user-form">
             <%= f.fields_for :location do |l| %>
@@ -57,7 +48,6 @@
 
     <%= render :partial => 'posts/form' %>
 
-    <h3>Posts</h3>
     <%= render :partial => 'posts/post', :collection => @user.posts %>
 </div>
 

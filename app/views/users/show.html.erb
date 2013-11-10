@@ -11,11 +11,11 @@
     <div class="user-info">
             
         <a class="pill following">
-            <span>20</span> following
+            <span><% @user.followed_users.count %></span> following
         </a>
         
         <a class="pill followers">
-            <span>14</span> followers
+            <span><%= @user.followers.count %></span> followers
         </a>
         
         <a class="pill location">
@@ -35,12 +35,8 @@
         
     </div>
     
+    <%= render :partial => 'posts/form' %>
+
+    <%= render :partial => 'posts/post', :collection => @user.posts %>
+    
 </div>
-
-
-<% if(@user.followed_users.count) %>
-	<h3>Following</h3>
-	<% @user.followed_users.each do |f| %>
-		<div><%= f.full_name %></div>
-	<% end %>
-<% end %>
