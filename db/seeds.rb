@@ -13,8 +13,8 @@ boston = Location.create(:city => 'Boston', :state => 'MA')
 
 #some users
 u = User.create(
-  :email        => 'super_admin@super_admin.com', 
-  :password     => 'super_admin',
+  :email        => 'superadmin@superadmin.com', 
+  :password     => 'superadmin',
   :first_name   => 'Super',
   :last_name    => 'Admin',
   :about        => 'Im so super admin.  super',
@@ -23,8 +23,8 @@ u = User.create(
 u.add_role :super_admin
 
 u = User.create(
-  :email        => 'the_man@the_man.com', 
-  :password     => 'the_the_man',
+  :email        => 'theman@theman.com', 
+  :password     => 'themantheman',
   :first_name   => 'The',
   :last_name    => 'Man',
   :about        => 'The Man.  nuff said.',
@@ -33,8 +33,8 @@ u = User.create(
 u.add_role :the_man
 
 u = User.create(
-  :email        => 'the_worker@the_worker.com', 
-  :password     => 'the_worker',
+  :email        => 'theworker@theworker.com', 
+  :password     => 'theworker',
   :first_name   => 'The',
   :last_name    => 'Worker',
   :about        => 'I work for the man',

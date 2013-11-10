@@ -1,5 +1,7 @@
 class Comment < ActiveRecord::Base
   
+  attr_accessible :content
+  
   self.table_name = 'posts'
   
   belongs_to :post, :foreign_key => :parent_id

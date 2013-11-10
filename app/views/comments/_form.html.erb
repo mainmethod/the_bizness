@@ -1,5 +1,5 @@
 <div class="comment-form">
-    <%= form_for [post, Comment.new] do |f| %>
+    <%= form_for [post, Comment.new], :remote => true do |f| %>
         <%= image_tag current_user.image_path.url(:profile) %>
         <%= f.text_area :content, :placeholder => 'Say Something...', :class => "expanding" %>
         

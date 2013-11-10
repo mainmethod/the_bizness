@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131109195907) do
+ActiveRecord::Schema.define(:version => 20131110025225) do
 
   create_table "jobs", :force => true do |t|
     t.string   "title"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(:version => 20131109195907) do
   end
 
   add_index "locations", ["latitude", "longitude"], :name => "index_locations_on_latitude_and_longitude"
+
+  create_table "messages", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.string   "subject"
+    t.text     "content"
+    t.boolean  "read",         :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
