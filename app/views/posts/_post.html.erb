@@ -1,9 +1,13 @@
 <div class="post">
 
     <div class="content">
-        <%= image_tag post.user.image_path.url(:thumb) %> 
+    	<a href="<%= user_path(post.user) %>">
+        	<%= image_tag post.user.image_path.url(:thumb) %>
+		</a>
         <div class="header">
-            <div class="name"><%= post.user.full_name %></div>
+        	<a href="<%= user_path(post.user) %>">
+            	<div class="name"><%= post.user.full_name %></div>
+            </a>
             <div class="title">title</div>
         </div>
         
