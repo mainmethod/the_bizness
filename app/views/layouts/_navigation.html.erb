@@ -41,9 +41,9 @@
 <div class="left-nav">
     
     <ul class="nav">
-        <li class="active"><a href="<%= posts_path %>"><span class="icon icon-list"></span> Conversation</a></li>
-        <li><a href="<%= users_path %>"><span class="icon icon-users"></span> People</a></li>
-        <li><a href="<%= users_path %>"><span class="icon icon-location"></span> Locations</a></li>
+        <%= nav_link 'Conversation', posts_path, 'list' %>
+        <%= nav_link 'People', users_path, 'users' %>
+        <%= nav_link 'Locations', '/', 'location' %>
     </ul>
     
 </div>
