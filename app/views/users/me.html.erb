@@ -14,6 +14,5 @@
 <% end %>
 
 <h3>Jobs</h3>
-<%= render :partial => 'jobs/form', :collection => @user.jobs %>
-
-
+<%= render :partial => 'job', :collection => @jobs %>
+<%= render :partial => 'jobs/form', :locals => {:job => Job.new} %>

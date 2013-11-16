@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def me
     @user = current_user
     @user.location = @user.location || @user.build_location
-    @user.jobs = @user.jobs || @user.jobs.build
+    @jobs = @user.jobs
   end
   
   def update

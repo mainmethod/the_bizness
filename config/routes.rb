@@ -4,6 +4,7 @@ TheBizness::Application.routes.draw do
     
   devise_for :users
   
+  resources :jobs, :only => [:create, :new, :edit, :update]
   resources :users, :only => [:index, :show, :update]
   resources :posts, :only => [:create, :index] do
     resources :comments, :only => [:create, :new]
