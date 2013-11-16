@@ -30,6 +30,7 @@ $darkyellow : #ffd200;
 
 @mixin text_input(){
     border: 1px solid #dadada;
+    box-sizing: border-box;
     border-radius: 2px;
     background: #fff;
     padding: 10px;

@@ -1,0 +1,59 @@
+.search-select {
+    @include box();
+    position: absolute;
+    left: 226px;
+    top: 117px;
+    width: 770px;
+    background: #fff;    
+    padding: 0;
+    border: 0;
+    
+    .item {
+        position: relative;
+        display: block;
+        height: 30px;
+        padding: 10px 10px 10px 50px;
+        border-bottom: 1px solid $lightgrey;
+        
+        img {
+            height: 30px;
+            width: 30px;
+            border-radius: 2px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+        
+        .name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+        .title {
+            font-size: 10px;
+            color: $fadeblue;
+        }
+        .location {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 12px;
+            color: $fadeblue;
+            
+            .icon {
+                color: $darkblue;
+            }
+        }
+        
+        &:hover {
+            background: $lightblue;
+            
+            .title,
+            .name,
+            .location {
+                color: #000;
+            }
+        }
+    }
+    
+}
