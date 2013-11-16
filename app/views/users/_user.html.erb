@@ -2,7 +2,7 @@
     <%= link_to image_tag(user.image_path.url(:thumb)), user %>
     
     <h3><%= link_to user.full_name, user %></h3>
-    <div class="title">title</div>
+    <div class="title"><%= user.subtitle %></div>
     
     <div class="user-location">
         <span class="icon icon-location"></span> <%= user.location.city %>, <%= user.location.state %>

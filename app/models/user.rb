@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
   
+  def subtitle
+    location.address if location
+  end
+  
   def location_attributes=(attributes)
     self.location = Location.find_or_create_by_city_and_state(attributes[:city],attributes[:state])
   end
