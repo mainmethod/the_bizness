@@ -32,186 +32,553 @@
         @include single-transition(color, 0.2s, ease);
     }
 }
+
 .icon-paperclip:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e600";
 }
 .icon-user:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e601";
 }
 .icon-users:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e602";
 }
 .icon-user-add:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e603";
 }
 .icon-vcard:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e604";
 }
 .icon-pencil:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e605";
 }
 .icon-mail:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e606";
 }
 .icon-phone:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e607";
 }
 .icon-location:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e608";
 }
 .icon-chat:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e609";
 }
 .icon-comment:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e60a";
 }
 .icon-house:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e60b";
 }
 .icon-thumbs-up:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e60c";
 }
 .icon-thumbs-down:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e60d";
 }
 .icon-search:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e60e";
 }
 .icon-link:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e60f";
 }
 .icon-camera:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e610";
 }
 .icon-eye:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e611";
 }
 .icon-newspaper:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e612";
 }
 .icon-key:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e613";
 }
 .icon-lock:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e614";
 }
 .icon-lock-open:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e615";
 }
 .icon-checkmark:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e616";
 }
 .icon-cross:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e617";
 }
 .icon-cw:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e618";
 }
 .icon-warning:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e619";
 }
 .icon-info:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e61a";
 }
 .icon-plus:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e61b";
 }
 .icon-minus:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e61c";
 }
 .icon-cross2:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e61d";
 }
 .icon-list:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e61e";
 }
 .icon-list2:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e61f";
 }
 .icon-pictures:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e620";
 }
 .icon-resize-enlarge:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e621";
 }
 .icon-book:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e622";
 }
 .icon-resize-shrink:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e623";
 }
 .icon-arrow-left:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e624";
 }
 .icon-arrow-down:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e625";
 }
 .icon-arrow-up:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e626";
 }
 .icon-arrow-right:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e627";
 }
 .icon-arrow-left2:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e628";
 }
 .icon-arrow-down2:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e629";
 }
 .icon-arrow-up2:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e62a";
 }
 .icon-arrow-right2:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e62b";
 }
 .icon-arrow-left3:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e62c";
 }
 .icon-uniE62D:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e62d";
 }
 .icon-tumblr:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e62e";
 }
 .icon-linkedin:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e62f";
 }
 .icon-facebook:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e630";
 }
 .icon-vimeo:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e631";
 }
 .icon-twitter:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e632";
 }
 .icon-googleplus:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e633";
 }
 .icon-pinterest:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e634";
 }
 .icon-skype:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e635";
 }
 .icon-soundcloud:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e636";
 }
 .icon-behance:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e637";
 }
 .icon-spotify:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e638";
 }
 .icon-tools:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e639";
 }
 .icon-cog:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e63a";
 }
 .icon-star:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e63b";
 }
 .icon-star2:before {
+  font-family: 'icomoon';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   content: "\e63c";
 }

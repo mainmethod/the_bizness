@@ -37,17 +37,17 @@
     
     <div class="profile-sub-nav">
         <ul>
-            <li class="active">Bio</li>
-            <li>Posts</li>
-            <li>Portfolio</li>
-            <li>Contact</li>
-            <li>Following</li>
+            <li data-show="profile-user-bio" class="icon-info active"> About</li>
+            <li data-show="profile-user-posts" class="icon-list"> Posts</li>
+            <li data-show="profile-user-portfolio" class="icon-book"> Portfolio</li>
+            <li data-show="profile-user-contact" class="icon-mail"> Contact</li>
+            <li data-show="profile-user-following" class="icon-chat"> Following</li>
         </ul>    
     </div> 
     
  
     <div class="profile-info-item profile-user-bio active">
-        bio
+        <%= @user.about; %>
     </div>
     
     <div class="profile-info-item profile-user-posts">

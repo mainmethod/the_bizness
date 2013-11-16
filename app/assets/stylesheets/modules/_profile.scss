@@ -78,20 +78,23 @@
     }
     
     .profile-sub-nav {
-        @include box();
         height: 40px;
-        padding: 10px;
+        padding: 0;
         margin-bottom: 10px;
         
         li {
+            background: #f9f9f9;
             float: left;
             padding: 10px;
             border-radius: 2px;
             margin-right: 10px;
+            color: #999;
             cursor: pointer;
-            
+            font-size: 12px;
+            text-transform: uppercase;
+
             &:hover {
-                background: $lightgrey;
+                color: #000;
             }
             
             &.active {
