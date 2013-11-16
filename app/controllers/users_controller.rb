@@ -7,12 +7,11 @@ class UsersController < ApplicationController
   def me
     @user = current_user
     @user.location = @user.location || @user.build_location
+    @user.jobs = @user.jobs || @user.jobs.build
   end
   
   def update
     @user = User.find(params[:id])
-    @location = Location.find_or_create_by_city_and_state(params[:user][:location_attributes][:city],params[:user][:location_attributes][:state])
-    @location.save!
     if @user.update_attributes(params[:user])
       flash[:notice] = "Your profile has been updated"
     else
