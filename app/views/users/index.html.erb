@@ -1,7 +1,9 @@
+<div class="user-list">
 <% @users.each do |u| %>
-	<div>
-	    <div><%= image_tag u.image_path.url(:profile) %></div>
+	<div class="user">
+	    <div><%= image_tag u.image_path.url(:thumb) %></div>
 		<div><%= u.full_name %></div>
 		<div><%= link_to "View", u %></div>
 	</div>
 <% end %>
+</div>
