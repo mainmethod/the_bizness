@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
   end
   
   def subtitle
-    location.address if location
+    jobs.first.title if jobs.first
   end
   
   def location_attributes=(attributes)
