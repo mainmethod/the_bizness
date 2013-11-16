@@ -1,24 +1,3 @@
 <div class="user-list">
-<% @users.each do |u| %>
-	<div class="user <%= cycle("even", "odd") %>">
-	    <%= link_to image_tag(u.image_path.url(:thumb)), u %>
-	    
-		<h3><%= link_to u.full_name, u %></h3>
-		<div class="title">title</div>
-		
-		<div class="user-location">
-		    <span class="icon icon-location"></span> <%= u.location.city %>, <%= u.location.state %>
-		</div>
-		
-		<% if !current_user.following?(u) %>
-            <a href="<%= follow_user_path(u) %>" class="follow-status">
-                <span class="icon icon-checkmark"></span>
-            </a>
-        <% else %>   
-            <a href="<%= unfollow_user_path(u) %>" class="follow-status active">
-                <span class="icon icon-checkmark"></span>
-            </a>
-        <% end %>
-	</div>
-<% end %>
+<%= render :partial => 'user', :collection => @users %>
 </div>

@@ -1,0 +1,20 @@
+<div class="user <%= cycle("even", "odd") %>">
+    <%= link_to image_tag(user.image_path.url(:thumb)), user %>
+    
+    <h3><%= link_to user.full_name, user %></h3>
+    <div class="title">title</div>
+    
+    <div class="user-location">
+        <span class="icon icon-location"></span> <%= user.location.city %>, <%= user.location.state %>
+    </div>
+    
+    <% if !current_user.following?(user) %>
+        <a href="<%= follow_user_path(user) %>" class="follow-status">
+            <span class="icon icon-checkmark"></span>
+        </a>
+    <% else %>   
+        <a href="<%= unfollow_user_path(user) %>" class="follow-status active">
+            <span class="icon icon-checkmark"></span>
+        </a>
+    <% end %>
+</div>
