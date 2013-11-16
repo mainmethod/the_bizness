@@ -1,35 +1,3 @@
-<div class="profile">
-    
-    <div class="profile-header">
-        
-        <%= image_tag @user.image_path.url(:profile) %>
-        <h1><%= @user.full_name %></h1>
-        <div class="title">Title</div>
-        
-    </div>
-    
-    <div class="user-info">
-            
-        <a class="pill following">
-            <span><%= @user.followed_users.count %></span> following
-        </a>
-        
-        <a class="pill followers">
-            <span><%= @user.followers.count %></span> followers
-        </a>
-        
-        <a class="pill location">
-            <span class="icon icon-location"></span> <%= @user.location.city %>, <%= @user.location.state %>
-        </a>
-        
-        <a class="pill follow-status active">
-            <span class="icon icon-checkmark"></span> Following
-        </a>
-        
-        <div class="clb"></div>
-        
-    </div>
-        
     <%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
         <div class="user-form">
             <%= f.fields_for :location do |l| %>
@@ -45,9 +13,4 @@
         <%= f.submit "Update profile" %>
     <% end %>
 
-
-    <%= render :partial => 'posts/form' %>
-
-    <%= render :partial => 'posts/post', :collection => @user.posts %>
-</div>
 
