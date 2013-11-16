@@ -4,18 +4,18 @@
         
         <%= image_tag @user.image_path.url(:profile) %>
         <h1><%= @user.full_name %></h1>
-        <div class="title">Title</div>
+        <div class="title"><%= @user.subtitle %></div>
         
     </div>
     
     <div class="user-info">
             
         <a class="pill following">
-            <span><%= @user.followed_count %></span> following
+            following <span><%= @user.followed_count %></span>
         </a>
         
         <a class="pill followers">
-            <span><%= @user.followers_count %></span> followers
+            followers <span><%= @user.followers_count %></span>
         </a>
         
         <a class="pill location">
