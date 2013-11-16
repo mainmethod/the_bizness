@@ -116,8 +116,10 @@ body {
         }
         
         .right-buttons {
-            position: relative;
+            position: absolute;
             z-index: 20; 
+            right: 0;
+            top: 0;
             
             a.messages {
                 position: relative;
@@ -148,37 +150,53 @@ body {
             .user-info {
                 position: relative;
                 float: right;
-                height: 70px;
-                width: 180px;
-                padding: 10px 0 0 80px;
-                margin-right: -180px;
-                @include single-transition(margin-right, 0.3s, ease);
+                min-width: 80px;
+                height: 80px;
                
                 img {
                     position: absolute;
                     top: 10px;
-                    left: 10px;
+                    right: 10px;
                     height: 60px;
                     width: 60px;
                     border-radius: 2px;
+                    z-index: 3;
                 }
                 
-                &:hover {
-                    margin-right: 0;
-                    @include single-transition(margin-right, 0.3s, ease);
+                .flyout {
+                    width: 0px;
+                    height: 80px;
+                    margin-right: 10px;
+                    overflow: hidden;
+                    text-align: right;
+                    @include opacity(0);
+                    @include transition(all 0.2s ease);
+                    
+                    .inner {
+                        padding: 10px 70px 10px 10px;
+                        width: 140px;
+                    }
+                    
+                    b {
+                        display: block;
+                    }
+                    
+                    .logout {
+                        text-align: right;
+                        font-size: 12px;
+                    }
+                }
+                
+                &.on {
+                    background: #f9f9f9;
+                    
+                    .flyout {
+                        @include opacity(1);
+                        width: 230px;
+                        @include transition(all 0.2s ease);
+                    }
                 }
             }
-
-            .logout {
-                position: absolute;
-                bottom: 10px;
-                left: 60px;
-                font-size: 12px;
-            }
-          
-            &:hover {
-                
-            } 
         }
     }
 }
@@ -194,34 +212,36 @@ body {
     
     
     ul.nav {
-        @include box();
-        padding: 20px 0 0 0;
         
         li {
             
             a {
+                background: #f9f9f9;
                 font-size: 14px;
                 display: block;
-                padding: 15px 5px 15px 60px;
-                color: #666;
+                padding: 14px 5px 14px 50px;
+                color: $darkgrey;
                 cursor: pointer;
                 position: relative;
                 height: 20px;
+                border-radius: 2px;
+                margin: 0 0 10px 0;
                 
                 .icon {
-                    color: #333;
+                    color: $darkgrey;
                     position: absolute;
                     width: 17px;
                     height: 17px;
                     font-size: 18px;
-                    padding: 11px;
+                    padding: 15px;
                     left: 0;
                     top: 0;
+                    border-radius: 2px;
                 }
                 
                 &:hover,
                 &:hover .icon {
-                    color: #fff;
+                    color: #202020;
                     @include single-transition(color, 0.3s, ease);
                 }
             }
@@ -230,12 +250,12 @@ body {
         li.active {
             
             a {
-                color: #202020;
-                background: #eee;
+                background: $darkblue;
+                color: #fff;
                 
                 .icon {
-                    color: $red;
-                    border-right: 1px dotted #ccc;
+                    background: $darkblue;
+                    color: #fff;
                 }
             }
         }

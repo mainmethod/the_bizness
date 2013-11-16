@@ -18,9 +18,14 @@
             <div class="user-info">
             
                 <a href="<%= profile_path %>"><%= image_tag current_user.image_path.url(:thumb) %></a>
+            
+                <div class="flyout">
+                    <div class="inner">
+                        <b><a href="<%= profile_path %>"><%= current_user.first_name %> <%= current_user.last_name %></a></b>
+                        <a class="logout" data-method="delete" href="<%= destroy_user_session_path %>"><span class="icon icon-close"></span> Log Out</a>
+                    </div>
+                </div>
 
-                <b><a href="<%= profile_path %>"><%= current_user.first_name %> <%= current_user.last_name %></a></b>
-                <a class="logout" data-method="delete" href="<%= destroy_user_session_path %>"><span class="icon icon-close"></span> Log Out</a>
             </div>
             
             <a class="messages" href="">
@@ -36,8 +41,9 @@
 <div class="left-nav">
     
     <ul class="nav">
-        <li class="active"><a href="<%= posts_path %>"><span class="icon icon-list"></span> News</a></li>
-        <li><a href="<%= users_path %>"><span class="icon icon-users"></span> Users</a></li>
+        <li class="active"><a href="<%= posts_path %>"><span class="icon icon-list"></span> Conversation</a></li>
+        <li><a href="<%= users_path %>"><span class="icon icon-users"></span> People</a></li>
+        <li><a href="<%= users_path %>"><span class="icon icon-location"></span> Locations</a></li>
     </ul>
     
 </div>
