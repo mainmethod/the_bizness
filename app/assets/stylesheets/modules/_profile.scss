@@ -33,6 +33,7 @@
         box-sizing: border-box;
         width: 100%;
         padding: 0;
+        margin: 0 0 20px 0;
         
         .pill {
             padding: 14px;
@@ -74,5 +75,41 @@
                 }
             }
         }
+    }
+    
+    .profile-sub-nav {
+        @include box();
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 10px;
+        
+        li {
+            float: left;
+            padding: 10px;
+            border-radius: 2px;
+            margin-right: 10px;
+            cursor: pointer;
+            
+            &:hover {
+                background: $lightgrey;
+            }
+            
+            &.active {
+                background: $darkblue;
+                color: #fff;
+            }
+        }
+        
+    }
+    
+    .profile-info-item {
+        display: none;
+        
+        &.active {
+            display: block;
+        }
+    }
+    .profile-user-bio {
+        @include box();
     }
 }

@@ -278,27 +278,29 @@ body {
 
 .flash {
     position: absolute;
-    top: 0;
-    width: 150px;
-    right: 20px;
-    top: 20px;
-    padding: 20px;
+    top: 4px;
+    right: 4px;
+    padding: 6px 10px;
+    font-size: 13px;
     color: #000;
     background: #f9f9f9;
-    border: 1px solid #ccc;
     border-radius: 2px;
-    z-index: 100;
+    z-index: 1000;
     text-align: center;
+    
     
     &.error {
         background: $red;
-        border-color: #FF7373;
+        color: #fff;
     }
     
     &.success {
         background: $green;
-        border-color: $darkgreen;
-        opacity: 0.8;
+        color: #fff;
+    }
+    
+    &.notice {
+        background: $darkyellow;
         color: #fff;
     }
     

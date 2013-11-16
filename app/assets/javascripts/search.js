@@ -32,7 +32,7 @@ var search = (function(){
         },
         
         search: function(keycode) {
-            console.log(keycode);
+            //console.log(keycode);
             term = input.val();
             
             if(keycode == 40) { //down
@@ -66,8 +66,8 @@ var search = (function(){
         
         setActive: function(){
             
-            console.log('count: ' + count);
-            console.log('active: ' + active);
+            //console.log('count: ' + count);
+            //console.log('active: ' + active);
             
             results_el.find('.item').removeClass('active');
             results_el.find('.item').eq(active -1).addClass('active');

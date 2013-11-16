@@ -35,8 +35,40 @@
         
     </div>
     
-    <%= render :partial => 'posts/form' %>
-
-    <%= render :partial => 'posts/post', :collection => @user.posts %>
+    <div class="profile-sub-nav">
+        <ul>
+            <li class="active">Bio</li>
+            <li>Posts</li>
+            <li>Portfolio</li>
+            <li>Contact</li>
+            <li>Following</li>
+        </ul>    
+    </div> 
+    
+ 
+    <div class="profile-info-item profile-user-bio active">
+        bio
+    </div>
+    
+    <div class="profile-info-item profile-user-posts">
+    
+        <%= render :partial => 'posts/form' %>
+    
+        <%= render :partial => 'posts/post', :collection => @user.posts %>
+    
+    </div>
+    
+    <div class="profile-info-item profile-user-portfolio">
+        portfolio
+    </div>
+    
+    <div class="profile-info-item profile-user-contact">
+        contact info
+    </div>
+    
+    <div class="profile-info-item profile-user-following">
+        following
+    </div>
+        
     
 </div>
