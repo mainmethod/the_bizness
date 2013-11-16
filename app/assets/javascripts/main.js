@@ -10,6 +10,7 @@ var main = (function(){
 
             self.fadeOutFlash();
             self.userNav();
+            self.profileNav();
             
         },
         
@@ -28,6 +29,20 @@ var main = (function(){
             $('.right-buttons').hover(false, function(){
                 $('.user-info').removeClass('on');
             });
+        },
+        
+        profileNav: function() {
+            
+            $('.profile-sub-nav li').on('click', function(){
+                
+                var show = $(this).data('show');
+                $('.profile-sub-nav li').removeClass('active');
+                $(this).addClass('active');
+                
+                $('.profile-info-item').hide();
+                $('.profile-info-item.' + show).fadeIn();
+            });
+            
         }
     };
 })();
