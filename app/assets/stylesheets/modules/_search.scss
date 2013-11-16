@@ -45,8 +45,13 @@
             }
         }
         
-        &:hover {
+        &.active {
             background: $lightblue;
+
+        }
+        
+        &:hover,
+        &.active {
             
             .title,
             .name,
