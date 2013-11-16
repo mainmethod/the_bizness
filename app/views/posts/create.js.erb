@@ -1,2 +1,3 @@
 $(".new_post").after('<%= escape_javascript(render :partial => 'post', locals: {:post => @post}) %>');
 $("#new_post textarea").val('');
+$(".post").first().find(".expanding").expandingTextarea();
