@@ -1,6 +1,68 @@
 .user-list {
     
     .user {
+        position: relative;
+        width: 215px;
+        float: left;
+        height: 100px;
         @include box();
+        padding-left: 140px;
+        
+        &.even {
+            margin-right: 20px;
+        }
+        
+        img {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        
+        h3 {
+            font-weight: bold;
+        }
+        
+        .title {
+            color: $fadeblue;
+            font-size: 12px;
+        }
+        
+        .follow-status {
+            color: $darkgrey;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: $lightgrey;
+            padding: 2px 5px;
+            border-radius: 2px;
+            margin: 0;
+            
+            span {
+                color: $darkgrey;
+            }
+            
+            &.active {
+                background: $darkgreen;
+                color: #fff;
+                
+                span,
+                .icon {
+                    color: #fff;
+                }
+            }
+        }
+        
+        .user-location {
+            position: absolute;
+            bottom: 20px;
+            left: 140px;
+            font-size: 12px;
+            
+            .icon {
+                padding: 0;
+                color: $darkblue;
+            }
+        } 
+        
     }
 }
