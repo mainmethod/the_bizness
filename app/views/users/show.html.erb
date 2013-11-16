@@ -37,25 +37,24 @@
     
     <div class="profile-sub-nav">
         <ul>
-            <li data-show="profile-user-bio" class="icon-info active"> About</li>
-            <li data-show="profile-user-posts" class="icon-list"> Posts</li>
+            <li data-show="profile-user-posts" class="icon-list active"> Posts</li>
+            <li data-show="profile-user-bio" class="icon-info"> About</li>
             <li data-show="profile-user-portfolio" class="icon-book"> Portfolio</li>
             <li data-show="profile-user-contact" class="icon-mail"> Contact</li>
             <li data-show="profile-user-following" class="icon-chat"> Following</li>
         </ul>    
     </div> 
     
- 
-    <div class="profile-info-item profile-user-bio active">
-        <%= @user.about; %>
-    </div>
-    
-    <div class="profile-info-item profile-user-posts">
+    <div class="profile-info-item profile-user-posts active">
     
         <%= render :partial => 'posts/form' %>
     
         <%= render :partial => 'posts/post', :collection => @user.posts.recent %>
     
+    </div>
+    
+    <div class="profile-info-item profile-user-bio">
+        <%= @user.about; %>
     </div>
     
     <div class="profile-info-item profile-user-portfolio">
