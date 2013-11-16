@@ -5,7 +5,9 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.parent_id = 0
     @post.save
-    redirect_to profile_path
+    respond_to do |format|
+      format.js
+    end
   end
   
   def index

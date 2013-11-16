@@ -54,7 +54,7 @@
     
         <%= render :partial => 'posts/form' %>
     
-        <%= render :partial => 'posts/post', :collection => @user.posts %>
+        <%= render :partial => 'posts/post', :collection => @user.posts.recent %>
     
     </div>
     
