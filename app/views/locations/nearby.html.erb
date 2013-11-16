@@ -1,8 +1,9 @@
-<h3>People within <%= @proximity %> miles from <%= @current_location.address %></h3>
-<% @all_locations.each do |location| %>
+<h3>People within <%= @proximity %> miles from <%= @location.address %></h3>
+<% @locations.each do |location| %>
     <% if location.users.count > 0 %>
     <div class="user-list">
         <h4><%= location.address %></h4>
+        <div class="distance"><%= @location.distance_to(location).round %> miles away</div>
         <%= render :partial => 'users/user', :collection => location.users %>
     </div>
     <% end %>

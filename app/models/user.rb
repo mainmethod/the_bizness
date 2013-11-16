@@ -48,6 +48,14 @@ class User < ActiveRecord::Base
     jobs.first.title if jobs.first
   end
   
+  def followers_count
+    followers.count
+  end
+  
+  def followed_count
+    followed_users.count
+  end
+  
   def location_attributes=(attributes)
     self.location = Location.find_or_create_by_city_and_state(attributes[:city],attributes[:state])
   end

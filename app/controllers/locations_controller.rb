@@ -5,8 +5,8 @@ class LocationsController < ApplicationController
   end
   
   def nearby
-    @current_location = current_user.location # this will end up being request.location
+    @location = request.location.state ? current_user.location : request.location
     @proximity = params[:proximity] ? params[:proximity] : 200
-    @all_locations = @current_location.nearbys(@proximity)
+    @locations = @location.nearbys(@proximity).unshift(@location)
   end
 end
