@@ -85,21 +85,43 @@
         li {
             background: #f9f9f9;
             float: left;
-            padding: 10px;
+            padding: 10px 14px 10px 40px;
             border-radius: 2px;
             margin-right: 10px;
             color: #999;
             cursor: pointer;
             font-size: 12px;
             text-transform: uppercase;
-
+            position: relative;
+            
+            .icon {
+                font-size: 16px;
+                margin-right: 10px;
+                position: absolute;
+                left: 10px;
+                top: 8px;
+            }
+            
             &:hover {
                 color: #000;
+                @include single-transition(color, 0.2s, ease);
+                
+                .icon {
+                    color: #000;
+                    @include single-transition(color, 0.2s, ease);
+                }
             }
             
             &.active {
                 background: $darkblue;
                 color: #fff;
+                @include single-transition(color, 0.2s, ease);
+                @include single-transition(background, 0.2s, ease);
+                
+                .icon {
+                    color: #fff;
+                    @include single-transition(color, 0.2s, ease);
+                }
             }
         }
         

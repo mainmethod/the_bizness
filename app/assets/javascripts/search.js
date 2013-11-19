@@ -15,6 +15,15 @@ var search = (function(){
             count      = 0;
             active     = 0;
             
+            input.on({
+                focus: function(){
+                    $('.icon-search').addClass('focus');
+                },
+                blur: function(){
+                    $('.icon-search').removeClass('focus');
+                }
+            });
+            
             input.keyup(function(e){
                 self.search(e.keyCode);
             });

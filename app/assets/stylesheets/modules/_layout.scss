@@ -98,20 +98,9 @@ body {
             padding: 11px;
             color: #eee;
             
-            &.icon-pencil {
-                width: 32px;
-                height: 32px;
-                padding: 8px 10px;
-                font-size: 35px;
-                border-radius: 2px;
-                left: auto;
-                right: 4px;
-                top: 4px;
-                color: #fff;
-                cursor: pointer;
-                background: $green;
-                border-bottom: 5px solid $darkgreen;
-                border-right: 0;
+            &.focus {
+                color: $darkyellow;
+                @include single-transition(color, 0.2s, ease);
             }
         }
         
