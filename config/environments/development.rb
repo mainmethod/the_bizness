@@ -43,6 +43,6 @@ TheBizness::Application.configure do
     :storage => :filesystem,
     :url => "/system/:class/:attachment/:id/:filename_:style.:extension",
     :path => ':rails_root/public:url',
-    :default_url => "http://nicenicejpg.com/200"
+    :default_url => "http://nicenicejpg.com/100"
   }
 end
