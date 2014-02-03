@@ -33,7 +33,7 @@
         box-sizing: border-box;
         width: 100%;
         padding: 0;
-        margin: 0 0 20px 0;
+        margin: 0 0 10px 0;
         
         .pill {
             padding: 14px;
@@ -80,7 +80,7 @@
     .profile-sub-nav {
         height: 40px;
         padding: 0;
-        margin-bottom: 10px;
+        margin: 20px 0;
         
         li {
             background: #f9f9f9;
@@ -104,6 +104,7 @@
             
             &:hover {
                 color: #000;
+                background: #fff;
                 @include single-transition(color, 0.2s, ease);
                 
                 .icon {
@@ -113,7 +114,7 @@
             }
             
             &.active {
-                background: $darkblue;
+                background: $blue;
                 color: #fff;
                 @include single-transition(color, 0.2s, ease);
                 @include single-transition(background, 0.2s, ease);

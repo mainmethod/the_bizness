@@ -1,8 +1,16 @@
 <%= form_for Post.new, :remote => true do |p| %>
     <div class="new-post">
-        <h3><span class="icon icon-pencil"></span> New</h3>
-        <%= p.text_area :content, :placeholder => 'Say Something...', :class => 'expanding' %>
-        <%= p.submit "Post", :class => "btn" %>
+        <%= image_tag current_user.image_path.url(:profile) %>
+        
+        <div class="input-wrap">
+            <span class="pointer"></span>
+            <%= p.text_area :content, :placeholder => 'Say Something...', :class => 'expanding' %>
+            
+            <div class="buttons">
+                <%= p.submit "Post", :class => "btn submit" %>
+            </div>
+        </div>
+        
     
     </div>
 <% end %>

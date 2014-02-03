@@ -3,19 +3,19 @@ a {
     color: #333;
 }
 ::-webkit-input-placeholder {
-   color: $grey;
+   color:  #ccc;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: $grey; 
+   color: #ccc; 
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: $grey;  
+   color: #ccc;  
 }
 
 :-ms-input-placeholder {  
-   color: $grey;  
+   color:  #ccc;  
 }
 
 h1 {
@@ -58,6 +58,13 @@ h1 {
         color: #333;
         background: transparent;
         border-color: transparent;
+        font-size: 12px;
+    }
+    
+    &.submit {
+        color: #fff;
+        background: $blue;
+        border-color: $darkblue;
         font-size: 12px;
     }
     
