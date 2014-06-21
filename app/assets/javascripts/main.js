@@ -13,6 +13,7 @@ var main = (function(){
             self.profileNav();
             self.viewPortfolioVideo();
             self.meForm();
+            self.changeLocation();
             
         },
         
@@ -74,6 +75,12 @@ var main = (function(){
             
             $('#user_image_path').change(function(){
                 $('.edit_user').submit();
+            });
+        },
+        
+        changeLocation: function(){
+            $('.change-location').on('click', function(){
+                $('#term').focus();
             });
         }
         
