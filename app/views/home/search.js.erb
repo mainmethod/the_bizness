@@ -1,1 +1,1 @@
-$(".search-select").html("<%= escape_javascript(render :partial => 'users/search', :collection => @users, :as => :user) %>");
+$(".search-select").html("<%= escape_javascript(render :partial => 'users/search', :collection => @users, :as => :user) %> <%= escape_javascript(render :partial => 'locations/search', :collection => @locations, :as => :location) %>");
