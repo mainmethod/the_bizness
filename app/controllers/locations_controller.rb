@@ -5,7 +5,11 @@ class LocationsController < ApplicationController
   end
   
   def nearby
-    @location = request.location.state ? current_user.location : request.location
+    if(!request.location.state.empty?)
+      @location = Location.find_or_create_by_city_and_state(request.location.city,request.location.state)
+    else
+      @location = current_user.location
+    end
     @proximity = params[:proximity] ? params[:proximity] : 200
     @locations = @location.nearbys(@proximity).unshift(@location)
   end
