@@ -1,52 +1,55 @@
-<div class="login-form">
+<div class="login-form register">
     <h2>Sign up</h2>
     <%= devise_error_messages! %>
     <div class="inner-form-wrap">
         <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-            
-        
-            <div class="input">
-                <%= f.label :email %>
-                <%= f.email_field :email, :autofocus => true, :placeholder => 'noobie@thebiz.com' %>
-            </div>
-            
-            <div class="input">
-                <%= f.label :first_name %>
-                <%= f.text_field :first_name, :placeholder => 'Noobie' %>
-            </div>
-            
-            <div class="input">
-                <%= f.label :last_name %>
-                <%= f.text_field :last_name, :placeholder => 'Nooberson' %>
-            </div>
-          
-            <div class="input">
-                <%= f.label :birthday %>
-                <%= f.date_select :birthday, :start_year => 1900 %>
-            </div>
-            
-            <% resource.build_location %>
-            <% resource.location.city = request.location.city unless request.location.city.empty? %>
-            <% resource.location.state = request.location.state unless request.location.state.empty? %>
-            
-            <%= f.fields_for :location do |l| %>
+
+            <div class="left-col">
+                
                 <div class="input">
-                    <%= f.label :zipcode %>
-                    <%= l.text_field :zipcode, :placeholder => 'Zipcode' %>
+                    <%= f.label :email %>
+                    <%= f.email_field :email, :autofocus => true, :placeholder => 'noobie@thebiz.com' %>
                 </div>
-            <% end %>
-        
-            <div class="input">
-                <%= f.label :password %>
-                <%= f.password_field :password %>
+                
+                <div class="input">
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+                </div>
+            
+                <div class="input">
+                    <%= f.label :password_confirmation %>
+                    <%= f.password_field :password_confirmation %>
+                </div>
             </div>
-        
-            <div class="input">
-                <%= f.label :password_confirmation %>
-                <%= f.password_field :password_confirmation %>
+            
+            <div class="right-col">
+                
+                <div class="input">
+                    <%= f.label :first_name %>
+                    <%= f.text_field :first_name, :placeholder => 'Noobie' %>
+                </div>
+                
+                <div class="input">
+                    <%= f.label :last_name %>
+                    <%= f.text_field :last_name, :placeholder => 'Nooberson' %>
+                </div>
+                
+                <% resource.build_location %>
+                <% resource.location.city = request.location.city unless request.location.city.empty? %>
+                <% resource.location.state = request.location.state unless request.location.state.empty? %>
+                
+                <%= f.fields_for :location do |l| %>
+                    <div class="input">
+                        <%= f.label :zipcode %>
+                        <%= l.text_field :zipcode, :placeholder => 'Zipcode' %>
+                    </div>
+                <% end %>
+                
             </div>
-        
-            <%= f.submit "Sign up", :class => 'btn save' %>
+            <div class="buttons">
+                <%= f.submit "Sign up", :class => 'btn save' %>
+            </div>
+            
       </div>
 <% end %>
 </div>
