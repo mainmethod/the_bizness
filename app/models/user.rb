@@ -62,7 +62,8 @@ class User < ActiveRecord::Base
   end
   
   def location_attributes=(attributes)
+    debugger
     self.location = Location.find_or_create_by_city_and_state(attributes[:city],attributes[:state])
-    self.location = Location.find_by_zipcode(attributes[:zipcode]) if self.location.blank?
+    self.location = Location.find_by_zipcode(attributes[:zipcode]) if self.location.nil?
   end
 end
