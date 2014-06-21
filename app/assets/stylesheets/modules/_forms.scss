@@ -70,6 +70,7 @@ textarea, .textareaClone {
         }
         
         input[type="email"],
+        input[type="text"],
         input[type="password"] {
           @include text_input();
           width: 318px;
