@@ -1,18 +1,100 @@
 <%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
-    <div class="user-form">
-        <%= f.fields_for :location do |l| %>
-            <div class="input"><%= l.text_field :city, :placeholder => 'City' %></div>
-            <div class="input"><%= l.text_field :state, :placeholder => 'State' %></div>
-        <% end %>
-        <div class="input"><%= f.text_field :first_name, :placeholder => "First Name", :autocomplete => "off" %></div>
-        <div class="input"><%= f.text_field :last_name, :placeholder => "Last Name", :autocomplete => "off" %></div>
-        <div><%= f.text_area :about, :placeholder => "About Me" %></div>
-        <div><%= f.label :image_path, 'Update Profile Image'%></div>
-        <div><%= f.file_field :image_path %></div>
-    </div>
-    <%= f.submit "Update profile" %>
-<% end %>
 
-<h3>Jobs</h3>
-<%= render :partial => 'job', :collection => @jobs %>
-<%= render :partial => 'jobs/form', :locals => {:job => Job.new} %>
+        
+        
+        
+
+    
+
+
+<!-- <h3>Jobs</h3> -->
+<% # render :partial => 'job', :collection => @jobs %>
+<% # render :partial => 'jobs/form', :locals => {:job => Job.new} %>
+
+<div class="profile me">
+    
+     <div class="profile-header">
+        
+        <%= image_tag @user.image_path.url(:profile) %>
+        <div><%= f.file_field :image_path %></div>
+        
+        <h1 class="editable" data-form-class="name"><%= @user.full_name %></h1>
+        
+        <div class="me-form-group name">
+            <%= f.text_field :first_name, :placeholder => "First Name", :autocomplete => "off" %>
+            <%= f.text_field :last_name, :placeholder => "Last Name", :autocomplete => "off" %>
+            <div class="btns">
+                <%= f.submit "Done Editing" %>
+                <a class="cancel">cancel</a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="user-info">
+            
+        <a class="pill following">
+            following <span><%= @user.followed_count %></span>
+        </a>
+        
+        <a class="pill followers">
+            followers <span><%= @user.followers_count %></span>
+        </a>
+        
+        <div class="pill location">
+            <span class="editable" data-form-class="my-location"><span class="icon icon-location"></span><%= @user.location.city %>, <%= @user.location.state %></span> 
+            
+            <div class="me-form-group my-location">
+            <%= f.fields_for :location do |l| %>
+                <div>
+                    <%= l.text_field :city, :placeholder => 'City' %>, 
+                    <%= l.text_field :state, :placeholder => 'State' %>
+                </div>
+                <div class="btns">
+                    <%= f.submit "Done Editing" %>
+                    <a class="cancel">cancel</a>
+                </div>
+            <% end %>
+            </div>
+        </div> 
+        <div class="clb"></div>
+        
+    </div>
+    
+    <div class="profile-sub-nav">
+        <ul>
+            <li data-show="profile-user-posts" class="active"><span class="icon icon-list active"></span> Posts</li>
+            <li data-show="profile-user-bio"><span class="icon icon-info"></span> About</li>
+            <li data-show="profile-user-portfolio"><span class="icon icon-book"></span> Portfolio</li>
+            <li data-show="profile-user-contact"><span class="icon icon-mail"></span> Contact</li>
+            <li data-show="profile-user-following"><span class="icon icon-chat"></span> Following</li>
+        </ul>    
+    </div> 
+    
+    <div class="profile-info-item profile-user-posts active">
+    
+        <%= render :partial => 'posts/form' %>
+    
+        <%= render :partial => 'posts/post', :collection => @user.posts.recent %>
+    
+    </div>
+    
+    <div class="profile-info-item profile-user-bio">
+        <%= f.text_area :about, :placeholder => "About Me" %>
+        <%= f.submit "Update About" %>
+    </div>
+    
+    <div class="profile-info-item profile-user-portfolio">
+        Update Portfolio Items
+    </div>
+    
+    <div class="profile-info-item profile-user-contact">
+        Update Contact Info
+    </div>
+    
+    <div class="profile-info-item profile-user-following">
+        following
+    </div>      
+    
+    <% end %>
+</div>

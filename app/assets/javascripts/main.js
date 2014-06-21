@@ -11,6 +11,8 @@ var main = (function(){
             self.fadeOutFlash();
             self.userNav();
             self.profileNav();
+            self.viewPortfolioVideo();
+            self.meForm();
             
         },
         
@@ -43,7 +45,38 @@ var main = (function(){
                 $('.profile-info-item.' + show).fadeIn();
             });
             
+        },
+        
+        viewPortfolioVideo: function(){
+            $('.portfolio-item').each(function(){
+                var wrap = $(this);
+                wrap.find('.view-video').on('click', function(){
+                    wrap.find('.embed').modal();
+                })
+            });
+        },
+        
+        meForm: function(){
+            $('.editable').on('click', function(){
+                var part = $(this).data('form-class'),
+                    clicked = $(this);
+                clicked.hide();
+                $('.me-form-group' + '.' + part).show();
+                $('.me-form-group' + '.' + part).find('input').eq(0).focus();
+                
+                var close = true;
+                
+                $('.me-form-group' + '.' + part + ' .cancel').on('click', function(){
+                    clicked.show();
+                    $('.me-form-group' + '.' + part).hide();
+                });
+            });
+            
+            $('#user_image_path').change(function(){
+                $('.edit_user').submit();
+            });
         }
+        
     };
 })();
 

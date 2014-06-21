@@ -54,15 +54,31 @@
     </div>
     
     <div class="profile-info-item profile-user-bio">
-        <%= @user.about; %>
+        <%= @user.about || 'This user has no info.'; %>
     </div>
     
     <div class="profile-info-item profile-user-portfolio">
-        portfolio
+        <div class="portfolio-item">
+            <h3>Some Thing I Worked On</h3>
+            <ul>
+                <li>Production Design</li>
+                <li>Some Other Thing</li>
+            </ul>
+            
+            <div class="clb"></div>
+            
+            <a class="view-video btn"><span class="icon icon-eye"></span></a>
+            
+            <div class="embed">
+                <a class="simplemodal-close icon icon-cross"></a>
+                <iframe width="853" height="480" src="//www.youtube.com/embed/duKL2dAJN6I" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+        </div>
     </div>
     
     <div class="profile-info-item profile-user-contact">
-        contact info
+        
     </div>
     
     <div class="profile-info-item profile-user-following">

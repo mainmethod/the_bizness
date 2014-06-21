@@ -23,11 +23,11 @@
 
             <div class="user-info">
             
-                <a href="<%= user_path(current_user) %>"><%= image_tag current_user.image_path.url(:thumb) %></a>
+                <a href="/me"><%= image_tag current_user.image_path.url(:thumb) %></a>
             
                 <div class="flyout">
                     <div class="inner">
-                        <b><a href="<%= user_path(current_user) %>"><%= current_user.first_name %> <%= current_user.last_name %></a></b>
+                        <b><a href="/me"><%= current_user.first_name %> <%= current_user.last_name %></a></b>
                         <a class="logout" data-method="delete" href="<%= destroy_user_session_path %>"><span class="icon icon-close"></span> Log Out</a>
                     </div>
                 </div>
