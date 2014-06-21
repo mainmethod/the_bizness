@@ -64,4 +64,12 @@ TheBizness::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  #paperclip options
+  config.paperclip_defaults = {
+    :storage => :filesystem,
+    :url => "/system/:class/:attachment/:id/:filename_:style.:extension",
+    :path => ':rails_root/public:url',
+    :default_url => "http://nicenicejpg.com/100"
+  }
 end
