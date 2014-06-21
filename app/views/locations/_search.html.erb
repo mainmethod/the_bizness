@@ -1,7 +1,4 @@
-<a href="<%= location_path location %>" class="item">
-    <div class="name"><%= location.city %></div>
-    <div class="title">,</div>
-    <div class="location"><%= location.state %>
-        <span class="icon icon-location"></span>
-    </div>
+<a href="<%= location_path location %>" class="item location">
+    <span class="icon icon-location"></span>
+    <div class="name"><%= location.city %>, <%= location.state %></div>
 </a>

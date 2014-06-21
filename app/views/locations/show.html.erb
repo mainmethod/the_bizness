@@ -1,3 +1,24 @@
-<div class="user-list">
-    <%= render :partial => 'users/user', :collection => @location.users %>
+<div class="locations">
+    
+    <div class="location-header">
+        <span class="icon icon-location"></span>
+        <div class="location-name"><%= @location.address %></div>
+        <a class="icon icon-pencil change-location"></a>
+    </div>
+    
+    <% @locations.each do |location| %>
+    
+        <% if location.users.count > 0 %>
+        
+            <div class="user-list user-list-by-location">
+                <div class="where"><%= location.address %> &nbsp; <b><%= @location.distance_to(location).round %> miles away</b></div>
+                
+                <%= render :partial => 'users/user', :collection => location.users %>
+                <div class="clb"></div>
+            </div>
+        
+        <% end %>
+        
+    <% end %>
+
 </div>

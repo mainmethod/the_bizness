@@ -59,6 +59,24 @@
                 color: #000;
             }
         }
+        
+        &.location {
+            padding-left: 30px;
+            height: 22px;
+            
+            .icon {
+                position: absolute;
+                left: 5px;
+                top: 11px;
+                font-size: 16px;
+                width: 16px;
+                height: 16px;
+                color: $blue;
+            }
+            .name {
+                font-size: 16px;
+            }
+        }
     }
     
 }
