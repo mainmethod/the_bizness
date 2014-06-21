@@ -5,6 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'pg'
 gem 'devise'
 gem 'paperclip'
 gem 'geocoder'
@@ -12,14 +13,12 @@ gem 'rolify'
 gem 'cancan'
 
 group :development do
-  gem 'mysql2'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
 end
 
 # Gems used only for assets and not required
