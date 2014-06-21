@@ -5,8 +5,9 @@ class HomeController < ApplicationController
   end
   
   def search
-    @users = params[:term] ? User.except_me(current_user).where("first_name like ? or last_name like ?","%#{params[:term]}%","%#{params[:term]}%").limit(7) : [];
-    @locations = params[:term] ? Location.where("city like ? or state like ?","%#{params[:term]}%","%#{params[:term]}%").limit(7) : [];
+    term = params[:term] ? params[:term] : ''
+    @users = User.except_me(current_user).search(term).limit(7)
+    @locations = Location.search(term).limit(7)
     respond_to do |format|
       format.js
     end

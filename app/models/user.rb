@@ -28,6 +28,11 @@ class User < ActiveRecord::Base
     where("id <> ?",current_user.id)  
   }
   
+  scope :search, lambda{|term|
+    where("LOWER(first_name) like LOWER(?) or LOWER(last_name) like LOWER(?)","%#{term}%","%#{term}%"). \
+    order("(first_name LIKE '%#{term}%') DESC, LENGTH(first_name) ASC, first_name ASC") 
+  }
+  
   def following?(other_user)
     followed_users.exists?(other_user)
   end

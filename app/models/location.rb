@@ -32,6 +32,11 @@ class Location < ActiveRecord::Base
   end
   after_validation :geocode, :reverse_geocode
   
+  scope :search, lambda{|term|
+    where("LOWER(city) like LOWER(?) or LOWER(state) like LOWER(?)","%#{term}%","%#{term}%"). \
+    order("(city LIKE '%#{term}%') DESC, LENGTH(city) ASC, city ASC")
+  }
+  
   def address
     [city, state].compact.join(', ')
   end
