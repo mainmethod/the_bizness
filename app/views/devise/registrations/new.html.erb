@@ -26,8 +26,7 @@
             </div>
             
             <% resource.build_location %>
-            <% resource.location.city = request.location.city unless request.location.city.empty? %>
-            <% resource.location.state = request.location.state unless request.location.state.empty? %>
+            <% resource.location.zipcode = request.location.postal_code unless request.location.postal_code.empty? %>
             
             <%= f.fields_for :location do |l| %>
                 <div class="input">
