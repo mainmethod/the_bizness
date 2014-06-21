@@ -9,6 +9,16 @@
                 <%= f.label :email %>
                 <%= f.email_field :email, :autofocus => true, :placeholder => 'noobie@thebiz.com' %>
             </div>
+            
+            <div class="input">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name, :placeholder => 'Noobie' %>
+            </div>
+            
+            <div class="input">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name, :placeholder => 'Nooberson' %>
+            </div>
           
             <div class="input">
                 <%= f.label :birthday %>
@@ -21,12 +31,8 @@
             
             <%= f.fields_for :location do |l| %>
                 <div class="input">
-                    <%= f.label :city %>
-                    <%= l.text_field :city, :placeholder => 'City' %>
-                </div>
-                <div class="input">
-                    <%= f.label :state %>
-                    <%= l.text_field :state, :placeholder => 'State' %>
+                    <%= f.label :zipcode %>
+                    <%= l.text_field :zipcode, :placeholder => 'Zipcode' %>
                 </div>
             <% end %>
         

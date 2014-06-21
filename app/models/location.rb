@@ -13,6 +13,7 @@ class Location < ActiveRecord::Base
       obj.longitude = geo.longitude
     end
   end
+  
   reverse_geocoded_by :latitude, :longitude do |obj,results|
     result = nil
     results.each do |r|
@@ -38,6 +39,6 @@ class Location < ActiveRecord::Base
   }
   
   def address
-    [city, state].compact.join(', ')
+    [city, state].compact.join(', ') + " #{zipcode}"
   end
 end
