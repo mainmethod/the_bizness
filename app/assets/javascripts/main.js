@@ -74,7 +74,7 @@ var main = (function(){
             });
             
             $('#user_image_path').change(function(){
-                $('.edit_user').submit();
+                $('.edit-user-header-form').submit();
             });
         },
         
