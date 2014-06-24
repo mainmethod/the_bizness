@@ -1,13 +1,11 @@
-
-
 <div class="profile me">
     
      <div class="profile-header">
-        <%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
+        <%= form_for @user, :html => {:autocomplete => "off", :class => 'edit-user-header-form edit_user'} do |f| %>
             <%= image_tag @user.image_path.url(:profile) %>
             <div><%= f.file_field :image_path %></div>
             
-            <h1 class="editable" data-form-class="name"><%= @user.first_name %></h1>
+            <h1 class="editable" data-form-class="name"><%= @user.full_name %></h1>
             
             <div class="me-form-group name">
                 <%= f.text_field :first_name, :placeholder => "First Name", :autocomplete => "off" %>
