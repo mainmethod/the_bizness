@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
     :thumb => '100x100#',
     :profile => '200x200#'
   }
+  validates_attachment_content_type :image_path, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
   
   scope :except_me, ->(current_user){
     where("id <> ?",current_user.id) 
