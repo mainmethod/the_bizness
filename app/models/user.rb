@@ -3,9 +3,6 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-  attr_accessible :email, :password, :password_confirmation, :remember_me, 
-                  :first_name, :last_name, :image_path, :birthday, :about, :location_attributes, :location_id
                     
   has_and_belongs_to_many :jobs, :join_table => 'users_jobs'
   has_many :relationships, :foreign_key => :follower_id, :class_name => 'Relationship', :dependent => :destroy
@@ -24,11 +21,11 @@ class User < ActiveRecord::Base
     :profile => '200x200#'
   }
   
-  scope :except_me, lambda{|current_user|
-    where("id <> ?",current_user.id)  
+  scope :except_me, ->(current_user){
+    where("id <> ?",current_user.id) 
   }
   
-  scope :search, lambda{|term|
+  scope :search, ->(term){
     where("LOWER(first_name) like LOWER(?) or LOWER(last_name) like LOWER(?)","%#{term}%","%#{term}%"). \
     order("(first_name LIKE '%#{term}%') DESC, LENGTH(first_name) ASC, first_name ASC") 
   }
@@ -63,9 +60,9 @@ class User < ActiveRecord::Base
   
   def location_attributes=(attributes)
     if(attributes[:city] && attributes[:state])
-      self.location = Location.find_or_create_by_city_and_state(attributes[:city],attributes[:state])
+      self.location = Location.where(:city => attributes[:city], :state => attributes[:state]).first_or_create
     elsif(attributes[:zipcode])
-      self.location = Location.find_or_create_by_zipcode(attributes[:zipcode]) if self.location.nil?
+      self.location = Location.where(:zipcode => attributes[:zipcode]).first_or_create if self.location.nil?
     end
     self.location
   end

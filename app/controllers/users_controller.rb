@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(user_params)
       flash[:notice] = "Your profile has been updated"
     else
       flash[:alert] = "There was a problem updating your profile"
@@ -34,5 +34,11 @@ class UsersController < ApplicationController
     followed_user = User.find(params[:id])
     current_user.unfollow!(followed_user)
     redirect_to user_url(followed_user)
+  end
+  
+  private
+  
+  def user_params
+    params.required(:user).permit(:first_name, :last_name, :about, :location_attributes => [:city, :state])
   end
 end

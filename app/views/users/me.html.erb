@@ -69,14 +69,6 @@
             <li data-show="profile-user-contact"><span class="icon icon-mail"></span> Contact</li>
             <li data-show="profile-user-following"><span class="icon icon-chat"></span> Following</li>
         </ul>    
-    </div> 
-    
-    <div class="profile-info-item profile-user-posts active">
-    
-        <%= render :partial => 'posts/form' %>
-    
-        <%= render :partial => 'posts/post', :collection => @user.posts.recent %>
-    
     </div>
     
     <div class="profile-info-item profile-user-bio">
@@ -97,4 +89,12 @@
     </div>      
     
     <% end %>
+    
+    <div class="profile-info-item profile-user-posts active">
+    
+        <%= render :partial => 'posts/form' %>
+    
+        <%= render :partial => 'posts/post', :collection => @user.posts.recent %>
+    
+    </div>
 </div>

@@ -1,6 +1,4 @@
 class Location < ActiveRecord::Base
-  attr_accessible :city, :country, :latitude, :longitutde, :state, :zipcode
-  attr_accessor :address
   has_many :users
   
   geocoded_by :address do |obj,results|
@@ -33,7 +31,7 @@ class Location < ActiveRecord::Base
   end
   after_validation :geocode, :reverse_geocode
   
-  scope :search, lambda{|term|
+  scope :search, ->(term){
     where("LOWER(city) like LOWER(?) or LOWER(state) like LOWER(?)","%#{term}%","%#{term}%"). \
     order("(city LIKE '%#{term}%') DESC, LENGTH(city) ASC, city ASC")
   }

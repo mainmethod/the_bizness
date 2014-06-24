@@ -15,8 +15,8 @@ TheBizness::Application.routes.draw do
   
   get "nearby/" => "locations#nearby", :as => :nearby
   get "nearby/:proximity" => "locations#nearby", :as => :nearby_proximity
-  match "users/follow/:id" => "users#follow", :as => :follow_user
-  match "users/unfollow/:id" => "users#unfollow", :as => :unfollow_user
-  match "me" => "users#me", :as => :profile
+  get "users/follow/:id" => "users#follow", :as => :follow_user
+  get "users/unfollow/:id" => "users#unfollow", :as => :unfollow_user
+  get "me" => "users#me", :as => :profile
   
 end

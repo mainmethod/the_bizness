@@ -6,7 +6,7 @@ class JobsController < ApplicationController
   
   def update
     @job = Job.find(params[:id])
-    @job.update_attributes(params[:job])
+    @job.update_attributes(job_params)
     respond_to do |format|
       format.js
     end
@@ -20,7 +20,13 @@ class JobsController < ApplicationController
   end
   
   def create
-    @job = Job.find_or_create_by_title(params[:job][:title])
+    @job = Job.where(:title => params[:job][:title]).first_or_create
     current_user.jobs << @job
+  end
+  
+  private
+  
+  def job_params
+    params.required(:job).permit(:title, :description)
   end
 end

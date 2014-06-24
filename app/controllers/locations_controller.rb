@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
   
   def nearby
     if(!request.location.state.empty?)
-      @location = Location.find_or_create_by_city_and_state(request.location.city,request.location.state)
+      @location = Location.where(:city => request.location.city, :state => request.location.state).first_or_create
     else
       @location = current_user.location
     end
